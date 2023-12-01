@@ -1,0 +1,91 @@
+Solution1.
+
+#!/bin/bash
+a=10
+b=20
+sum=$(( $a + $b ))
+echo "Sum is: $sum"
+
+Solution2.
+
+#!/bin/bash
+VAR1="Linuxize"
+VAR2="Linuxize"
+if [ "$VAR1" = "$VAR2" ]; then
+echo "Strings are equal."
+
+else
+
+echo "Strings are not equal."
+
+fi
+Solution3.
+
+#!/bin/bash
+read n
+a=0
+b=1
+echo "The fibonacci Series is "
+echo "$a"
+echo "$b"
+for (( i = 0; i < n; i++ )); do
+c=$(( $a + $b ))
+echo "$c"
+a=$b
+b=$c
+done
+
+Solution4.
+#!/bin/bash
+echo "Enter any character: "
+read ch
+case $ch in
+"a") echo "It is a vowel.";;
+"e") echo "It is a vowel.";;
+"i") echo "It is a vowel.";;
+"o") echo "It is a vowel.";;
+"u") echo "It is a vowel.";;
+*) echo "It is not a vowel."
+esac
+Solution5.
+
+read file
+echo "$file"
+echo "number of characters are:"
+cat "$file" | wc -c
+echo "number of words are:"
+cat "$file" | wc -w
+echo "number of lines are:"
+cat "$file" | wc –l
+
+Solution6.
+
+read file
+echo "$file"
+file_size=$(du -h "$file" | cut -f1)
+echo "File Size: $file_size"
+permissions=$(ls -l "$file" | awk '{print $1}')
+echo "Permissions: $permissions"
+owner=$(ls -l "$file" | awk '{print $3}')
+
+echo "Owner: $owner"
+modification_time=$(stat -c "%y" "$file")
+echo "Modification Time: $modification_time"
+
+Solution7.
+
+#!/bin/bash
+# Display OS version
+echo "OS Version:"
+cat /etc/os-release
+# Display CPU information
+echo "CPU Information:"
+lscpu
+echo "Memory Information:"
+free -h
+# Display disk usage
+echo "Disk Usage:"
+df -h
+# Display network details
+echo "Network Details:"
+ip addr
